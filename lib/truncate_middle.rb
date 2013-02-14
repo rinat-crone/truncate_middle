@@ -9,7 +9,7 @@ module TruncateMiddle
 
     raise ArgumentError, "Options is not hash" unless opts.is_a?(Hash)
 
-    opts.delete_if{ |k, v| v.nil? }.reversive_merge!(defaults)
+    opts.delete_if{ |k, v| v.nil? }.reverse_merge!(defaults)
     opts[:separator] = opts[:separator].to_s
 
     raise ArgumentError, "Length is not integer" unless opts[:length].is_a?(Integer)
